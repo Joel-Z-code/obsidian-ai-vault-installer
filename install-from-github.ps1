@@ -24,9 +24,7 @@ if ($null -eq $repoDir) {
     throw "Cannot find extracted repository folder."
 }
 
-$standardSource = Join-Path $repoDir.FullName "skills\$SkillName"
-$legacySource = Join-Path $repoDir.FullName "skill"
-$source = if (Test-Path -LiteralPath $standardSource) { $standardSource } else { $legacySource }
+$source = Join-Path $repoDir.FullName "skills\$SkillName"
 $target = Join-Path $InstallDir $SkillName
 
 if (!(Test-Path -LiteralPath $source)) {

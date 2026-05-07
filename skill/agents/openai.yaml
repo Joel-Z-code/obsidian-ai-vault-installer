@@ -1,4 +1,0 @@
-interface:
-  display_name: "Obsidian AI Vault Installer"
-  short_description: "Create a standard Obsidian AI knowledge base"
-  default_prompt: "帮我搭建知识库"
