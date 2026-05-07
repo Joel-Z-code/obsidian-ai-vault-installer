@@ -40,10 +40,10 @@
 
 ## 一键安装（推荐）
 
-使用 `npx` 从 GitHub 安装：
+使用 Skills CLI 安装：
 
 ```powershell
-npx github:Joel-Z-code/obsidian-ai-vault-installer
+npx skills add github:Joel-Z-code/obsidian-ai-vault-installer
 ```
 
 默认安装到：
@@ -56,6 +56,14 @@ npx github:Joel-Z-code/obsidian-ai-vault-installer
 
 ```text
 帮我搭建知识库
+```
+
+## 备用 npx 安装
+
+如果你的环境还没有 `skills add`，可以直接运行仓库自带安装器：
+
+```powershell
+npx github:Joel-Z-code/obsidian-ai-vault-installer
 ```
 
 ## PowerShell 安装
@@ -99,7 +107,7 @@ PowerShell 脚本同样默认安装到：
 在仓库根目录运行：
 
 ```powershell
-python .\skill\scripts\create_vault.py --base-dir .\test-output --vault-name AI知识库-test
+python .\skills\obsidian-ai-vault-installer\scripts\create_vault.py --base-dir .\test-output --vault-name AI知识库-test
 ```
 
 成功时会输出：

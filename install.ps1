@@ -7,7 +7,9 @@ $ErrorActionPreference = "Stop"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 $repoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$source = Join-Path $repoRoot "skill"
+$standardSource = Join-Path $repoRoot "skills\$SkillName"
+$legacySource = Join-Path $repoRoot "skill"
+$source = if (Test-Path -LiteralPath $standardSource) { $standardSource } else { $legacySource }
 $target = Join-Path $InstallDir $SkillName
 
 if (!(Test-Path -LiteralPath $source)) {

@@ -29,7 +29,13 @@ git push -u origin main
 
 推送完成后，打开仓库页面，确认 `install-from-github.ps1` 可以访问。
 
-优先测试 npx 安装：
+优先测试 Skills CLI 安装：
+
+```powershell
+npx skills add github:Joel-Z-code/obsidian-ai-vault-installer
+```
+
+也可以测试仓库自带 npx 安装器：
 
 ```powershell
 npx github:Joel-Z-code/obsidian-ai-vault-installer

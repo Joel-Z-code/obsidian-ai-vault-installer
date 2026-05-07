@@ -6,7 +6,9 @@ const path = require("path");
 
 const skillName = "obsidian-ai-vault-installer";
 const repoRoot = path.resolve(__dirname, "..");
-const source = path.join(repoRoot, "skill");
+const source = fs.existsSync(path.join(repoRoot, "skills", skillName))
+  ? path.join(repoRoot, "skills", skillName)
+  : path.join(repoRoot, "skill");
 const codexHome = process.env.CODEX_HOME || path.join(os.homedir(), ".codex");
 const installDir = process.env.CODEX_SKILLS_DIR || path.join(codexHome, "skills");
 const target = path.join(installDir, skillName);
@@ -56,4 +58,3 @@ copyRecursive(source, target);
 console.log(`Installed skill to: ${target}`);
 console.log("Restart Codex / Claude Code to pick up new skills.");
 console.log("Use prompt: 帮我搭建知识库");
-

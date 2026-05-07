@@ -7,10 +7,10 @@
   },
   "files": [
     "bin",
+    "skills",
     "skill",
     "README.md",
     "LICENSE"
   ],
   "license": "MIT"
 }
-
