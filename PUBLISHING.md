@@ -29,7 +29,13 @@ git push -u origin main
 
 推送完成后，打开仓库页面，确认 `install-from-github.ps1` 可以访问。
 
-然后测试：
+优先测试 npx 安装：
+
+```powershell
+npx github:Joel-Z-code/obsidian-ai-vault-installer
+```
+
+也可以测试 PowerShell 安装：
 
 ```powershell
 powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/Joel-Z-code/obsidian-ai-vault-installer/main/install-from-github.ps1 -OutFile $env:TEMP\install-obsidian-ai-vault-installer.ps1; & $env:TEMP\install-obsidian-ai-vault-installer.ps1"

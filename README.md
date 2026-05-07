@@ -38,7 +38,27 @@
 - 不迁移旧知识库。
 - 不删除用户文件。
 
-## 一键安装
+## 一键安装（推荐）
+
+使用 `npx` 从 GitHub 安装：
+
+```powershell
+npx github:Joel-Z-code/obsidian-ai-vault-installer
+```
+
+默认安装到：
+
+```text
+~/.codex/skills/obsidian-ai-vault-installer
+```
+
+安装完成后，重启或刷新你的 Agent 环境，然后发送：
+
+```text
+帮我搭建知识库
+```
+
+## PowerShell 安装
 
 在 Windows PowerShell 里运行：
 
@@ -46,7 +66,7 @@
 powershell -ExecutionPolicy Bypass -Command "iwr https://raw.githubusercontent.com/Joel-Z-code/obsidian-ai-vault-installer/main/install-from-github.ps1 -OutFile $env:TEMP\install-obsidian-ai-vault-installer.ps1; & $env:TEMP\install-obsidian-ai-vault-installer.ps1"
 ```
 
-默认安装到：
+PowerShell 脚本同样默认安装到：
 
 ```text
 ~/.codex/skills/obsidian-ai-vault-installer

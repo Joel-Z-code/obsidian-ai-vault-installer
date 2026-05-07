@@ -1,0 +1,16 @@
+{
+  "name": "obsidian-ai-vault-installer",
+  "version": "0.1.0",
+  "description": "一键安装 Obsidian AI 知识库搭建器 Skill",
+  "bin": {
+    "obsidian-ai-vault-installer": "bin/install.js"
+  },
+  "files": [
+    "bin",
+    "skill",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT"
+}
+
