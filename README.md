@@ -106,7 +106,7 @@ AI知识库/
 npx skills add github:Joel-Z-code/obsidian-ai-vault-installer
 ```
 
-如果本地已经安装过旧版本，安装器会先备份旧 Skill，再写入新版本。
+如果本地已经安装过旧版本，安装器会直接替换旧 Skill 文件。它只替换安装器 Skill，不会删除或修改已经生成的知识库。
 
 ## 备用安装
 
@@ -153,4 +153,3 @@ python .\skills\obsidian-ai-vault-installer\scripts\create_vault.py --base-dir .
 当前版本：`v0.1.0`
 
 首版目标：把教程里的 Obsidian AI 知识库主线流程封装成一个可安装、可运行、可自测的标准版 Skill。
-

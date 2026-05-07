@@ -38,6 +38,11 @@ function timestamp() {
   ].join("");
 }
 
+function removeRecursive(targetPath) {
+  if (!fs.existsSync(targetPath)) return;
+  fs.rmSync(targetPath, { recursive: true, force: true });
+}
+
 if (!fs.existsSync(source)) {
   console.error(`Cannot find skill source folder: ${source}`);
   process.exit(1);
@@ -46,9 +51,8 @@ if (!fs.existsSync(source)) {
 fs.mkdirSync(installDir, { recursive: true });
 
 if (fs.existsSync(target)) {
-  const backup = `${target}.backup-${timestamp()}`;
-  fs.renameSync(target, backup);
-  console.log(`Existing skill backed up to: ${backup}`);
+  console.log(`Updating existing skill at: ${target}`);
+  removeRecursive(target);
 }
 
 copyRecursive(source, target);

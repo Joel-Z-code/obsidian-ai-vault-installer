@@ -15,9 +15,8 @@ if (!(Test-Path -LiteralPath $source)) {
 }
 
 if (Test-Path -LiteralPath $target) {
-    $backup = "$target.backup-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
-    Move-Item -LiteralPath $target -Destination $backup
-    Write-Host "Existing skill backed up to: $backup"
+    Write-Host "Updating existing skill at: $target"
+    Remove-Item -LiteralPath $target -Recurse -Force
 }
 
 New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null

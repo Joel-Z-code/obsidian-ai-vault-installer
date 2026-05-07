@@ -32,9 +32,8 @@ if (!(Test-Path -LiteralPath $source)) {
 }
 
 if (Test-Path -LiteralPath $target) {
-    $backup = "$target.backup-$(Get-Date -Format 'yyyyMMdd-HHmmss')"
-    Move-Item -LiteralPath $target -Destination $backup
-    Write-Host "Existing skill backed up to: $backup"
+    Write-Host "Updating existing skill at: $target"
+    Remove-Item -LiteralPath $target -Recurse -Force
 }
 
 New-Item -ItemType Directory -Path $InstallDir -Force | Out-Null
@@ -42,3 +41,4 @@ Copy-Item -LiteralPath $source -Destination $target -Recurse -Force
 
 Write-Host "Installed skill to: $target"
 Write-Host "Use prompt in your Agent: build my knowledge base / 帮我搭建知识库"
+Remove-Item -LiteralPath $tempRoot -Recurse -Force -ErrorAction SilentlyContinue
