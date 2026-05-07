@@ -61,7 +61,7 @@ python scripts/create_vault.py --target "E:/Obsidian/AI知识库"
 python scripts/create_vault.py --supplement-existing --target "E:/Obsidian/ExistingVault"
 ```
 
-After running, read the script output and report the created Vault path, validation result, and next actions.
+After running, read the script output and the generated setup report. Then give the user a short post-install handoff in plain Chinese. Do not only paste the JSON result.
 
 ## What The Script Creates
 
@@ -94,18 +94,23 @@ It also initializes the JSONL indexes, core workflow files, manual configuration
 
 ## Completion Report
 
-After installation, tell the user:
+After installation, give the user a zero-prior-knowledge handoff. Assume the user may not know Obsidian, Vault, Agent, Clippings, JSONL, or plugin configuration.
 
-- where the Vault was created
-- what was created
-- whether MVP self-test passed
-- what the knowledge base can do now
-- how to start using it
-- which manual steps remain
-- how to customize it later
-- that this skill is a one-time installer and can be uninstalled after confirmation
+Use this order:
 
-Keep the message direct and zero-prior-knowledge friendly.
+1. Installation result: where the knowledge base folder was created and whether the minimum self-test passed.
+2. What this is: explain that it is a local knowledge base folder for the user and AI to use together.
+3. What it helps with: receiving messy materials, organizing them, extracting summaries/methods/topics, supporting writing, and supporting review.
+4. How to start today: open it with Obsidian, read `07 系统方法/使用入门.md`, put a few files into `00 收件箱/` or `Clippings/`, then tell the Agent `处理收件箱`.
+5. What still needs manual work: installing Obsidian, installing Obsidian Web Clipper, granting browser permissions, choosing sync/backup, filling personal context.
+6. What it cannot do: it cannot log in for the user, grant browser permissions, install external apps/plugins, decide personal goals/style, or guarantee perfect first-pass classification.
+7. How to customize later: start with `10 About me/`, then adjust templates and workflows according to real use.
+8. Key files: `07 系统方法/使用入门.md`, `07 系统方法/手动配置清单.md`, `07 系统方法/定制化指南.md`, `07 系统方法/MVP自测报告.md`, and `AGENTS.md`.
+9. Uninstall reminder: this skill is a one-time installer. After the user confirms the knowledge base folder works, they can uninstall the skill. Deleting the skill does not delete the knowledge base folder.
+
+Keep the message direct, concrete, and friendly. Avoid abstract phrases such as "knowledge infrastructure" or "workflow closure" unless immediately explained in simple words.
+
+Do not end with an invitation like "if you need, I can...".
 
 ## Manual Steps To Tell The User
 
@@ -118,6 +123,8 @@ The installer cannot do these actions:
 - configure sync or backup
 - install optional plugins like Dataview, QuickAdd, or Kanban
 - fill the user's personal context
+
+Explain manual steps as actions that require the user's computer, browser, or account confirmation. Do not frame them as installer failures.
 
 ## Validation
 
