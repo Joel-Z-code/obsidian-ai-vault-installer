@@ -136,6 +136,13 @@ python .\skills\obsidian-ai-vault-installer\scripts\create_vault.py --base-dir .
 }
 ```
 
+自动化测试（校验目录生成、索引可解析、不覆盖已有文件）：
+
+```powershell
+pip install pytest
+python -m pytest tests -q
+```
+
 ## 卸载
 
 这个 Skill 是一次性安装器。知识库搭建完成后，日常使用不再依赖它。
